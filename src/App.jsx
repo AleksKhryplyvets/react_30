@@ -1,8 +1,9 @@
-import { createStore, combineReducers} from 'redux';
 import { Provider } from 'react-redux';
 import {countReducer} from './redusers/ReduxCoun';
 import {authReducer} from './redusers/ReduxAuth';
 import Counter from './components/Counter';
+import { createStore, combineReducers} from 'redux';
+
 
 function App() {
   const rootReduser = compoundReducers({

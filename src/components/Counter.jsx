@@ -1,38 +1,19 @@
-import { useReducer } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Auth from './Auth';
 
 const Counter = () => {
-    const inittialState = {
-        count: 0,
-        isCount: true
-    }
-
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case 'Increment':
-                return { ...state, count: state.count + 1};
-            case 'Decrement':
-                return { ...state, count: state.count - 1};
-            case 'Reset':
-                return { ...state, count: 0};
-            default:
-                return state;
-        }
+    const dispatch = useDispatch()
+    const state = useSelector(({count}) => count);
+    console.log(state);
+    const increment = () => {
+        dispatch({ type: "Increment" });
     };
-
-
-    const [state, dispatch] = useReducer(reducer, inittialState);
-
-
-    const hendleCountIncrement = () => {
-        dispatch({ type: 'Increment' });
+    const decrement = () => {
+      dispatch({ type: "Decrement" });
     };
-    const hendleCountDecrement = () => {
-        dispatch({ type: 'Decrement' });
+    const reset  = () => {
+      dispatch({ type: "Reset" });
     };
-    const hendleCountReset = () => {
-        dispatch({ type: 'Reset' });
-    };
-
     return (
         <div>
             <h1>Counter: {state.count}</h1>

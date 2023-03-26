@@ -14,8 +14,8 @@ const Auth = () => {
             Login state: {state.isAuth? 'true' : 'false'}
         </h2>
     {state.isAuth?
-    <button onClick={logout}>Log out</button>:
-    <button onClick={login}>Login</button>}
+    <Button onClick={logout}>Log out</Button>:
+    <Button onClick={login}>Login</Button>}
     </div>
 }
 

@@ -3,7 +3,7 @@ import Auth from './Auth';
 
 const Counter = () => {
     const dispatch = useDispatch()
-    const state = useSelector(({count}) => count);
+    const value = useSelector(({count}) => count);
     console.log(state);
     const increment = () => {
         dispatch({ type: "Increment" });
@@ -16,10 +16,10 @@ const Counter = () => {
     };
     return (
         <div>
-            <h1>Counter: {state.count}</h1>
-            <Button onClick={increment}>Increment</Button>
-            <Button onClick={decrement}>Decrement</Button>
-            <Button onClick={reset}>Reset</Button>
+            <h1>Counter: {value.count}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
+            <button onClick={reset}>Reset</button>
             <Auth/>
         </div>
     )

@@ -1,11 +1,25 @@
-import Counter from './components/Counter.jsx';
+import { createStore, combineReducers} from 'redux';
+import { Provider } from 'react-redux';
+import {countReducer} from './redusers/ReduxCoun';
+import {authReducer} from './redusers/ReduxAuth';
+import Counter from './components/Counter';
 
 function App() {
-  return (
+  const rootReduser = compoundReducers({
+    count: countReducer,
+    auth: authReducer
+
+  })
+  const store = createStore(rootReduser);
+  return(
     <div>
-      <Counter/>
+      <Provider store={store}>
+        <Counter />
+      </Provider>
     </div>
-  );
+  ) 
 }
 
 export default App;
+
+

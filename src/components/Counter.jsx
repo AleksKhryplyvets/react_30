@@ -17,9 +17,10 @@ const Counter = () => {
     return (
         <div>
             <h1>Counter: {state.count}</h1>
-            <button onClick={hendleCountIncrement}>Increment</button>
-            <button onClick={hendleCountDecrement}>Decrement</button>
-            <button onClick={hendleCountReset}>Reset</button>
+            <Button onClick={increment}>Increment</Button>
+            <Button onClick={decrement}>Decrement</Button>
+            <Button onClick={reset}>Reset</Button>
+            <Auth/>
         </div>
     )
 }

@@ -9,14 +9,13 @@ const Auth = () => {
     const logout = () => {
         dispatch({type: 'Logout'});
     }
-    return <div>
-        <h2>
-            Login state: {state.isAuth? 'true' : 'false'}
-        </h2>
-    {state.isAuth?
-    <Button onClick={logout}>Log out</Button>:
-    <Button onClick={login}>Login</Button>}
+    return (
+    <div>
+      <h2>Login: {value.isAuth ? 'True' : 'False'}</h2>
+      <button onClick={login}>Login</button>
+      <button onClick={logout}>Logout</button>
     </div>
+)
 }
 
 export default Auth;
